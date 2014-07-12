@@ -5,7 +5,7 @@ body{
 	color: black;
 	font-weight: 300;
 	font-family: 'Roboto', sans-serif;
-	background-image: url('../img/crowd-background.jpg'); 
+	background-image: url('../img/crowd-background.jpg');
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
 	  -o-background-size: cover;
@@ -97,7 +97,7 @@ hr{
     border-top: 1px solid rgba(48, 91, 130, 0.05);
 }
 
-.button{
+button{
 	border: 3px solid #305b82;
 	padding: 1em;
 	display: inline-block;
@@ -108,7 +108,7 @@ hr{
 	color: #305b82;
 }
 
-.button:hover{
+button:hover{
 	color: white;
 	border: 3px solid #305b82;
 	padding: 1em;
