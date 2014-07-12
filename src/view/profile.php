@@ -30,9 +30,9 @@
     	<div class="large-9 columns">
     		<div class="maincard">
     			<span class="rightcard">
-	        		<h1>Justin Bieber</h1>
-	        		<h2>Pop singer and song writer</h2>
-	        		<h3>Ontario, Canada | Music</h3>
+	        		<h1>Jeff Weiner</h1>
+	        		<h2>CEO of LinkedIn</h2>
+	        		<h3>Mountain View, CA | Tech</h3>
 	        	</span>
         	</div>
     	</div>

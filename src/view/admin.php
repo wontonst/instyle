@@ -1,8 +1,8 @@
 <?php
-$fullname = ($_SESSION['name']) ? $_SESSION['name'] : 'Justin Bieber';
-$tagline = ($_SESSION['tagline']) ? $_SESSION['tagline'] : 'Pop singer and song ruiner';
-$place = ($_SESSION['location']) ? $_SESSION['location'] : 'Ontario, Canada';
-$industry = ($_SESSION['industry']) ? $_SESSION['industry'] : 'Music';
+$fullname = ($_SESSION['name']) ? $_SESSION['name'] : 'Jeff Weiner';
+$tagline = ($_SESSION['tagline']) ? $_SESSION['tagline'] : 'CEO of LinkedIn';
+$place = ($_SESSION['location']) ? $_SESSION['location'] : 'Mountain View, CA';
+$industry = ($_SESSION['industry']) ? $_SESSION['industry'] : 'Tech';
 ?>
 <!DOCTYPE HTML>
 <html>
