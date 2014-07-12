@@ -36,9 +36,32 @@ function rateUp($id){
 
 }
 function register($email,$pwd){
+  $connect = init_db();
+  $table = "users";
+  $select = "SELECT * from $table where email='$email'";
+  $result = mysql_query($select, $connect) or die(mysql_error());
+  if(!$result) {
+    die('Connection failed.');
+  }
+  else {
+    if($result->num_rows > 0) {
+      redirect_and_die();
+    }
+    else {
+        $sql = "INSERT INTO users ".
+         "(email,password) ".
+         "VALUES ('$email', '$password')";
+        $retval = mysql_query( $sql, $connect );
+        if(! $retval )
+        {
+          die('Could not enter data: ' . mysql_error());
+        }
+    }
+  }
 
 }
 function login($email,$pwd){
+
 
 }
 /**
