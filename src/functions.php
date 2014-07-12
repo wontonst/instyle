@@ -15,7 +15,7 @@ $$k = $v;
 include(__DIR__.'/view/'.$name.'.php');
 }
 function init_db() {
-  if($GLOBAL['config']['connection'])
+  if($GLOBALS['config']['connection'])
   {
     return $GLOBALS['config']['connection'];
   }
