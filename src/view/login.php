@@ -26,13 +26,13 @@
             <div id="signupform">
                 <h1>Sign into InStyle</h1>
                 <p>InStyle makes it quick and easy to get feedback on which image to use for your LinkedIn profile picture.</p>
-                <form>
+                <form action="/" method="POST">
                     <input type="text" name="lastname" placeholder="email" class="updatedinput"> </br>
                     <input type="password" name="password" placeholder="password" class="updatedinput">
+                    </br><button class="submit">SIGN UP</button>
                 </form>
-                <a href="/login" ></br><div class="button">Login</div></a>
-                <p>Don't have an account? <a href="/" id="signin">Sign Up</a></p>
-            </div> 
+                <p>Don't have an account? <a href="index.html" id="signin">Sign Up</a></p>
+            </div>
         </div>
     </div>
 
@@ -41,7 +41,7 @@
 
     <script>
         jQuery(document).ready(function($) {
-            $.stellar();    
+            $.stellar();
         });
 
         // $( "#signin" ).click(function() {
