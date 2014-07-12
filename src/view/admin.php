@@ -19,6 +19,11 @@ $industry = ($_SESSION['industry']) ? $_SESSION['industry'] : 'Music';
         .content-nav {
             background-color: #FFF;
         }
+        .addphoto {
+            width: 100%;
+            height: 150px;
+            background-color: rgba(128,128,128,0.5);
+        }
     </style>
 </head>
 
@@ -71,6 +76,12 @@ $industry = ($_SESSION['industry']) ? $_SESSION['industry'] : 'Music';
               <li> <img src="../img/justin4.jpeg"> <span class="imglabel">12 Votes</li>
 
               <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes</li>
+
+              <li>
+                <div class="addphoto">
+
+                </div>
+              </li>
 
             </ul>
         </div>
