@@ -30,8 +30,8 @@
                     <input type="text" name="lastname" placeholder="email" class="updatedinput"> </br>
                     <input type="password" name="password" placeholder="password" class="updatedinput">
                 </form>
-                <a href="#" ></br><div class="button">SIGN UP</div></a>
-                <p>Don't have an account? <a href="index.html" id="signin">Sign Up</a></p>
+                <a href="/login" ></br><div class="button">Login</div></a>
+                <p>Don't have an account? <a href="/" id="signin">Sign Up</a></p>
             </div> 
         </div>
     </div>
