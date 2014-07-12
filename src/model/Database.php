@@ -76,7 +76,6 @@ function redirect_and_die() {
 }
 
 function register($email,$pwd){
-
   $connect = init_db();
   $select = "SELECT * from users where email='$email'";
   $result = mysqli_query($select, $connect) or die(mysqli_error());

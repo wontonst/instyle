@@ -1,45 +1,47 @@
-<!doctype html>
-<html class="no-js" lang="en">
-  <head>
+<!DOCTYPE HTML>
+<html>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
-    <script src="/js/vendor/modernizr.js"></script>
-  </head>
-  <body>
-    
+    <title>[IN]Style</title>
+    <link rel="stylesheet" href="../css/foundation.css" />
+    <link rel="stylesheet" href="../css/homestyle.css" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="navbar">
+		<ul>
+			<li><img id="logo" src="../img/instyle-logo.svg"></li>
+		</ul>
+	</div>
+
+    <div class="callout">
+
     <div class="row">
-      <div class="large-12 columns" style ="background-color:#305B82; font-family: 'Roboto Slab', serif;">
-        <div class = "row"> <div class = "large-10 columns"><h1 style="color:#FFF; font-family: 'Roboto Slab', serif;">InStyle</h1> </div><div class = "large-2 columns" style = "padding-top:.5cm;"> <a href="#" class="button success">Log In</a></div></div></div>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="large-3 columns" style="padding-top:1cm; background-color:#CCC;">
-	        <form data-abide> <div class="name-field"> <label>Your name <small>required</small> <input type="text" required pattern="[a-zA-Z]+"> </label> <small class="error">Name is required and must be a string.</small> </div> <div class="email-field"> <label>Email <small>required</small> <input type="email" required> </label> <small class="error">An email address is required.</small> </div> <div class="password-field"> <label>Password <small>required</small> <input type="password" required> </label> <small class="error">A password is required.</small> </div><button type="submit">Submit</button> </form>
-      </div>
-       <div class="large-8 columns" style="padding-top:1cm;">
-          <div class = "row">
-          <div class = "large-12 columns">
-          <font size="6" style="font-family: 'Indie Flower', cursive; font-weight: 400; font-size: 72; text-align:center " align="center">  Need help choosing a professional picture? </font> 
-          </div></div> </br>
+        <div class="large-5 columns">
 
+            <div id="signupform">
+                <h1>Get help choosing <br> a profile picture</h1>
+                <p>InStyle makes it quick and easy to get feedback on which image to use for your LinkedIn profile picture.</p>
+                <form action="/" method="POST">
+                    <input type="text" name="lastname" placeholder="email" class="updatedinput"> </br>
+                    <input type="password" name="password" placeholder="password" class="updatedinput"> </br>
+                    <input type="submit" value="SUBMIT" class="button">
+                </form>
 
-          <ul class="example-orbit" data-orbit> <li> <div class = "row"><div class = "large-12 columns"><div class = "row"><div class = "large-5 columns"><img src="/img/homepage.jpg" style ="border:10px solid black" alt="Smiley face"></div><div class = "large-2 columns"><font size="6" style="font-family: 'Indie Flower', cursive; font-weight: 400; font-size: 72; padding-top:4cm;">  Vs.  </font></div><div class = "large-5 columns"> <img src="/img/homepage2.jpg" style ="border:10px solid black" alt="Smiley face"></div></div></div> </div> </li> <li class="active"><div class = "row"><div class = "large-12 columns"><img src="/img/lnstyle.jpg"></div> </div></li> </ul>
+                <p>Already have an account? <a href="login.php" id="signin">Log In</a></p>
+            </div>
+        </div>
 
-
-      </div>
+        <div class="large-7 columns">
+                <img id="homesample" src="../img/sample4home.png">
+        </div>
     </div>
 
-    
     </div>
-    
-    <script src="/js/vendor/jquery.js"></script>
-    <script src="/js/foundation.min.js"></script>
-    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Slab' rel='stylesheet' type='text/css'>
-    <script>
-      $(document).foundation();
-    </script>
-  </body>
+
+</body>
+
+</html>
