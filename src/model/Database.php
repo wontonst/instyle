@@ -82,9 +82,6 @@ function register($email,$pwd){
     die('mySQL Connection failed on Database.php:'.__LINE__);
   }
   else {
-      redirect_and_die();
-    }
-    else {
         $sql = "INSERT INTO users ".
          "(email,password) ".
          "VALUES ('$email', '$password')";
