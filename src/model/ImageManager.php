@@ -1,5 +1,17 @@
 <?php
 class ImageManager{
+public static function getAll($res){
+$ret = array();
+while($r=mysqli_fetch_assoc($res)){
+$ret[]=$r;
+}
+return $ret;
+}
+public static function getMyImg($myId){
+$conn = init_db();
+$res = mysqli_query($conn,"SELECT * FROM images WHERE u_id=$myId");
+return ImageManager::getAll($res);
+}
 /**
 @param myId id of the user requesting. do NOT return the user's own picture :D
 @returns an array in this fashion
@@ -15,26 +27,13 @@ array(
 );
 */
 public static function getImg($myId=-1){
-	$conn=mysqli_connect("localhost","username","pwd","db");
-	$ppl_to_choose_from=mysqli_query('SELECT DISTINCT u_id FROM Images');
-	$num_people_to_choose_from=mysqli_num_rows($ppl_to_choose_from);
+$conn=init_db();
 
-  $whom_to_choose=0;
-  while($whom_to_choose!=$myId)
-    $whom_to_choose=rand(1, $num_people_to_choose_from);
-  $chosen_u_id = mysqli_data_seek($ppl_to_choose_from, $whom_to_choose); // rows start at 0
-
-  $pics=mysqli_query("SELECT * FROM Images WHERE u_id='".$chosen_u_id."' FROM Images");
-
-  $result = array();
-  while ($row = mysqli_fetch_array($pics)) {
-    array_push($result, $row['url'], $row['ups']);
-  }
-
-  mysqli_free_result($pics);
-  mysqli_close($conn);
-
-  return $result;
+$res = mysqli_query($conn,"select * from users where id!=$myId order by rand() limit 1");
+$usr= mysqli_fetch_assoc($res);
+$uid=$usr['id'];
+$res = mysqli_query($conn,"select * from images where u_id=$uid");
+return ImageManager::getAll($res);
 }
 
 /**
@@ -58,17 +57,14 @@ move_uploaded_file($_FILES["pic"]["tmp_name"],
 @param id the id of the img to drop
 */
 public static function dropImg($id){
-  $conn=mysqli_connect("localhost","username","pwd","db");
-    mysqli_query($conn, "DELETE FROM Images where id='" + $id +"'");
-  mysqli_close($conn);
+  $conn=init_db();
+    mysqli_query($conn,$conn, "DELETE FROM images where id='" . $id ."'");
 }
 /**
 @param id the id of the image to rate up
 */
 function rateUp($id){
-  $conn=mysqli_connect("localhost","username","pwd","db");
-    mysqli_query($conn, "UPDATE Images SET up='(SELECT up FROM Images where id='".$id."' )+1' WHERE id='"+$id+"'");
-  mysqli_close($conn);
+    mysqli_query($conn, "UPDATE Images SET ups=ups+1 where id=$id");
 }
 
 }
