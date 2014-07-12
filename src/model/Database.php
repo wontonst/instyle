@@ -17,22 +17,22 @@ array(
 public static function getImg($myId=-1){
 	$conn=mysqli_connect("localhost","username","pwd","db");
 	$ppl_to_choose_from=mysqli_query('SELECT DISTINCT u_id FROM Images');
-	$num_people_to_choose_from=mysql_num_rows($ppl_to_choose_from);
+	$num_people_to_choose_from=mysqli_num_rows($ppl_to_choose_from);
 
   $whom_to_choose=0;
   while($whom_to_choose!=$myId)
     $whom_to_choose=rand(1, $num_people_to_choose_from);
-  $chosen_u_id = mysql_data_seek($ppl_to_choose_from, $whom_to_choose); // rows start at 0
+  $chosen_u_id = mysqli_data_seek($ppl_to_choose_from, $whom_to_choose); // rows start at 0
 
-  $pics=mysql_query("SELECT * FROM Images WHERE u_id='".$chosen_u_id."' FROM Images");
+  $pics=mysqli_query("SELECT * FROM Images WHERE u_id='".$chosen_u_id."' FROM Images");
 
   $result = array();
-  while ($row = mysql_fetch_array($pics)) {
+  while ($row = mysqli_fetch_array($pics)) {
     array_push($result, $row['url'], $row['ups']);
   }
 
-  mysql_free_result($pics);
-  mysql_close($conn);
+  mysqli_free_result($pics);
+  mysqli_close($conn);
 
   return $result;
 }
@@ -53,7 +53,7 @@ public static function addImg($myId){
 
    		$conn=init_db();
    		mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
-		mysql_close($conn);
+		mysqli_close($conn);
 	}
 }
 /**
@@ -62,7 +62,7 @@ public static function addImg($myId){
 public static function dropImg($id){
   $conn=mysqli_connect("localhost","username","pwd","db");
     mysqli_query($conn, "DELETE FROM Images where id='" + $id +"'");
-  mysql_close($conn);
+  mysqli_close($conn);
 }
 /**
 @param id the id of the image to rate up
@@ -70,29 +70,28 @@ public static function dropImg($id){
 function rateUp($id){
   $conn=mysqli_connect("localhost","username","pwd","db");
     mysqli_query($conn, "UPDATE Images SET up='(SELECT up FROM Images where id='".$id."' )+1' WHERE id='"+$id+"'");
-  mysql_close($conn);
+  mysqli_close($conn);
 }
 
 function register($email,$pwd){
   $connect = init_db();
   $table = "users";
   $select = "SELECT * from $table where email='$email'";
-  $result = mysql_query($select, $connect) or die(mysql_error());
+  $result = mysqli_query($select, $connect) or die(mysqli_error());
   if(!$result) {
-    die('Connection failed.');
+    die('mySQL Connection failed on Database.php:'.__LINE__);
   }
   else {
-    if($result->num_rows > 0) {
       redirect_and_die();
     }
     else {
         $sql = "INSERT INTO users ".
          "(email,password) ".
          "VALUES ('$email', '$password')";
-        $retval = mysql_query( $sql, $connect );
+        $retval = mysqli_query( $sql, $connect );
         if(! $retval )
         {
-          die('Could not enter data: ' . mysql_error());
+          die('Could not enter data: ' . mysqli_error($GLOBALS['config']['connetion']));
         }
     }
   }
@@ -102,7 +101,7 @@ function login($email,$pwd){
   $connect = init_db();
   $table="users";
   $select = "SELECT id,password from users where email='$email'";
-  $result = mysql_query($select, $connect) or die(mysql_error());
+  $result = mysqli_query($select, $connect) or die(mysqli_error());
   if(!$result) {
     die('Connection failed.');
   }
@@ -111,7 +110,7 @@ function login($email,$pwd){
       redirect_and_die();
     }
     else {
-      $password = mysql_result($result, 1);
+      $password = mysqli_result($result, 1);
       if($password === $pwd) {
         session_start();
         echo "$HI";
