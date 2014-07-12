@@ -46,8 +46,9 @@ public static function addImg($myId){
   } else {
 $conn = init_db();
 $url = uniqid();
-$res = mysqli_query($conn,'insert into images (u_id, url, ups) values ('.$myId.', \''.$url.'\', 0)') or die(mysqli_error($conn).'failed query Database.php:'.__LINE__);
-$dest = __DIR__."/../img/usr/" . $url;
+$sql='insert into images (u_id, url, ups) values ('.$myId.', \''.$url.'.jpg\', 0)';
+$res = mysqli_query($conn,$sql) or die(mysqli_error($conn).'failed query:'.__LINE__);
+$dest = __DIR__."/../img/usr/" . $url.'.jpg';
 echo 'moved to '.$dest;
 move_uploaded_file($_FILES["pic"]["tmp_name"],
       $dest);

@@ -2,6 +2,7 @@
 require_once(__DIR__.'/config.php');
 require_once(__DIR__.'/functions.php');
 require_once(__DIR__.'/autoloader.php');
+session_start();
 // handle routing
 $url = $_SERVER['REQUEST_URI'];
 if($url == '/')

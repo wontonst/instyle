@@ -5,8 +5,9 @@ $_SESSION['email'] = 'a@a.a';
 if($_SESSION['email']) {
 $email = $_SESSION['email'];
 $name = $_SESSION['name'];
-//$images = getImgsForUser()
-createView('profile');
+$imgs = ImageManager::getImg();
+createView('profile',array('imgs'=>$imgs));
+
 }
 else {
 Redirect::to('/login');

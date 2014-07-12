@@ -43,13 +43,17 @@ return true;
     }
   }
 
-function isLoggedIn(){
+public function isLoggedIn(){
   if(!isset($_SESSION['email']) || !$_SESSION['email']) {
     return false;
   }
   else {
     return true;
   }
+}
+public function logout(){
+unset($_SESSION['email']);
+unset($_SESSION['id']);
 }
 }
 ?>

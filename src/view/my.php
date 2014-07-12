@@ -15,7 +15,7 @@
 	<div class="navbar">
 		<ul>
 			<li><img id="logo" src="../img/instyle-logo.svg"></li>
-			<li>Welcome, <?php echo $name; ?></li>
+			<li>Welcome, <?php echo $_SESSION['email']; ?></li>
 
 		</ul>
 	</div>
@@ -30,7 +30,7 @@
     	<div class="large-9 columns">
     		<div class="maincard">
     			<span class="rightcard">
-	        		<h1>Justin Bieber</h1>
+	        		<h1><?php echo $_SESSION['email']?></h1>
 	        		<h2>Pop singer and song writer</h2>
 	        		<h3>Ontario, Canada | Music</h3>
 	        	</span>
@@ -65,6 +65,12 @@ foreach($imgs as $img){
 			  <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
 
 			</ul>
+<form action="/my" method="post" enctype="multipart/form-data">
+<label for="file">Filename:</label>
+<input type="file" name="pic" id="pic"><br>
+<input type="submit" name="submit" value="Submit">
+</form>
+
     	</div>
   	</div>
 </body>
