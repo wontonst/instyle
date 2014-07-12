@@ -39,22 +39,22 @@ public static function getImg($myId=-1){
 
 /**
 Maximum of 8 pictures per user. (dont use magic number set it in config.php and use $_GLOBAL
-@param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_GET is
+@param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_POST is
 */
 public static function addImg($myId){
-	if(isset($_GET['pic'])) {
+	if(isset($_FILES['pic']) && $_FILES['pic']['error'] <= 0) {
     	//Only strip slashes if magic quotes is enabled.
-    	$pic = (get_magic_quotes_gpc()) ? stripslashes($_GET['pic']) : $_GET['pic'];
-    	$pic = '/your/path/to/real/image/location/'.$pic;
+    	$pic = (get_magic_quotes_gpc()) ? stripslashes($_FILE['pic']) : $_FILE['pic'];
+    	$pic = __DIR__.'/../img/'.$pic;
     	$size = getimagesize($pic);
 	    header('Content-type: '.$size['mime']);
 	    //Read the image and send it directly to the output.
     	readfile($pic);
 
-      $conn=mysqli_connect("localhost","username","pwd","db");
-      mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
-    mysql_close($conn);
-  }
+   		$conn=init_db();
+   		mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
+		mysql_close($conn);
+	}
 }
 /**
 @param id the id of the img to drop
@@ -83,7 +83,8 @@ function register($email,$pwd){
   }
   else {
     if($result->num_rows > 0) {
-      redirect_and_die();
+      //redirect_and_die();
+      echo "HI";
     }
     else {
         $sql = "INSERT INTO users ".
@@ -130,4 +131,4 @@ function isLoggedIn(){
   }
 }
 }
-} ?>
+?>

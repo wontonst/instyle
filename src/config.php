@@ -3,7 +3,8 @@
 $_GLOBAL['config'] = array(
 'dbhost'=>'localhost',
 'dbusr'=>'root',
-'dbpwd'=>'password',
+'dbpwd'=>'root',
+'db'=>'instyle'
 );
 
 ?>
