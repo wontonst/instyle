@@ -42,19 +42,15 @@ Maximum of 8 pictures per user. (dont use magic number set it in config.php and 
 @param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_POST is
 */
 public static function addImg($myId){
-	if(isset($_FILES['pic']) && $_FILES['pic']['error'] <= 0) {
-    	//Only strip slashes if magic quotes is enabled.
-    	$pic = (get_magic_quotes_gpc()) ? stripslashes($_FILE['pic']) : $_FILE['pic'];
-    	$pic = __DIR__.'/../img/'.$pic;
-    	$size = getimagesize($pic);
-	    header('Content-type: '.$size['mime']);
-	    //Read the image and send it directly to the output.
-    	readfile($pic);
-
-   		$conn=init_db();
-   		mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
-		mysqli_close($conn);
-	}
+       if ($_FILES["pic"]["error"] > 0) {
+    echo "Return Code: " . $_FILES["pic"]["error"] . "<br>";
+  } else {
+$conn = init_db();
+$url = uniqid();
+$res = mysqli_query($conn,'insert into images (u_id, url, ups) values ('.$myId.', \''.$url.'\', 0)') or die(mysqli_error($conn).'failed query Database.php:'.__LINE__);
+move_uploaded_file($_FILES["pic"]["tmp_name"],
+      __DIR__."/../img/usr/" . $url);
+}
 }
 /**
 @param id the id of the img to drop
