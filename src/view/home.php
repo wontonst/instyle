@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="/css/foundation.css" />
+    <script src="/js/vendor/modernizr.js"></script>
   </head>
   <body>
     
@@ -26,7 +26,7 @@
           </div></div> </br>
 
 
-          <ul class="example-orbit" data-orbit> <li> <div class = "row"><div class = "large-12 columns"><div class = "row"><div class = "large-5 columns"><img src="img/homepage.jpg" style ="border:10px solid black" alt="Smiley face"></div><div class = "large-2 columns"><font size="6" style="font-family: 'Indie Flower', cursive; font-weight: 400; font-size: 72; padding-top:4cm;">  Vs.  </font></div><div class = "large-5 columns"> <img src="img/homepage2.jpg" style ="border:10px solid black" alt="Smiley face"></div></div></div> </div> </li> <li class="active"><div class = "row"><div class = "large-12 columns"><img src="img/lnstyle.jpg"></div> </div></li> </ul>
+          <ul class="example-orbit" data-orbit> <li> <div class = "row"><div class = "large-12 columns"><div class = "row"><div class = "large-5 columns"><img src="/img/homepage.jpg" style ="border:10px solid black" alt="Smiley face"></div><div class = "large-2 columns"><font size="6" style="font-family: 'Indie Flower', cursive; font-weight: 400; font-size: 72; padding-top:4cm;">  Vs.  </font></div><div class = "large-5 columns"> <img src="/img/homepage2.jpg" style ="border:10px solid black" alt="Smiley face"></div></div></div> </div> </li> <li class="active"><div class = "row"><div class = "large-12 columns"><img src="/img/lnstyle.jpg"></div> </div></li> </ul>
 
 
       </div>
@@ -35,8 +35,8 @@
     
     </div>
     
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/foundation.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Indie+Flower|Roboto+Slab' rel='stylesheet' type='text/css'>
     <script>
