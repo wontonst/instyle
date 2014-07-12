@@ -15,9 +15,9 @@ array(
 );
 */
 public static function getImg($myId=-1){
-  $conn=mysqli_connect("localhost","username","pwd","db");
-  $ppl_to_choose_from=mysql_query('SELECT DISTINCT u_id FROM Images');
-  $num_people_to_choose_from=mysql_num_rows($ppl_to_choose_from);
+	$conn=mysqli_connect("localhost","username","pwd","db");
+	$ppl_to_choose_from=mysql_query('SELECT DISTINCT u_id FROM Images');
+	$num_people_to_choose_from=mysql_num_rows($ppl_to_choose_from);
 
   $whom_to_choose=0;
   while($whom_to_choose!=$myId)
@@ -42,14 +42,14 @@ Maximum of 8 pictures per user. (dont use magic number set it in config.php and 
 @param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_GET is
 */
 public static function addImg($myId){
-  if(isset($_GET['pic'])) {
-      //Only strip slashes if magic quotes is enabled.
-      $pic = (get_magic_quotes_gpc()) ? stripslashes($_GET['pic']) : $_GET['pic'];
-      $pic = '/your/path/to/real/image/location/'.$pic;
-      $size = getimagesize($pic);
-      header('Content-type: '.$size['mime']);
-      //Read the image and send it directly to the output.
-      readfile($pic);
+	if(isset($_GET['pic'])) {
+    	//Only strip slashes if magic quotes is enabled.
+    	$pic = (get_magic_quotes_gpc()) ? stripslashes($_GET['pic']) : $_GET['pic'];
+    	$pic = '/your/path/to/real/image/location/'.$pic;
+    	$size = getimagesize($pic);
+	    header('Content-type: '.$size['mime']);
+	    //Read the image and send it directly to the output.
+    	readfile($pic);
 
       $conn=mysqli_connect("localhost","username","pwd","db");
       mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
@@ -130,3 +130,4 @@ function isLoggedIn(){
   }
 }
 }
+} ?>
