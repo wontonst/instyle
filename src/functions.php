@@ -1,6 +1,7 @@
 <?php
 
 function createView($name,$variables=null){
+echo $name;
 if($variables)
 foreach($variables as $k => $v){
 $$k = $v;
