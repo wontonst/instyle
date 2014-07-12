@@ -15,7 +15,7 @@
 <body>
 	<div class="navbar">
 		<ul>
-			<li><img id="logo" src="../img/instyle-logo.svg"></li>
+			<li><img id="logo" src="../img/instyle-logo.png"></li>
 		</ul>
 	</div>
 

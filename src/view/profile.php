@@ -14,7 +14,7 @@
 <body>
 	<div class="navbar">
 		<ul>
-			<li><img id="logo" src="../img/instyle-logo.svg"></li>
+			<li><img id="logo" src="../img/instyle-logo.png"></li>
 			<li>Welcome, <?php echo $name; ?></li>
 
 		</ul>
@@ -49,13 +49,13 @@
     <div class="row">
     	<div class="large-12 columns" id="help">
     		<ul class="small-block-grid-1 large-block-grid-4">
-			  <li> <img src="../img/justin2.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin2.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.png"> </a> </span> </li>
 
-			  <li> <img src="../img/justin.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.png"> </a> </span> </li>
 
-			  <li> <img src="../img/justin4.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin4.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.png"> </a> </span> </li>
 
-			  <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.png"> </a> </span> </li>
 
 			</ul>
     	</div>
