@@ -2,7 +2,8 @@
 
 abstract class BaseController{
 
-abstract function make();
+abstract function get();
+abstract function post();
 
 }
 

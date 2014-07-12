@@ -9,7 +9,15 @@ $url='/home';
 $path = explode('/',$url);
 $classname=ucfirst($path[1]);
 $controller = new $classname();
-$controller->make();
+
+switch($_SERVER['REQUEST_METHOD']){
+case 'GET';
+$controller->get();
+break;
+case 'POST':
+$controller->post();
+break;
+}
 
 ?>
 

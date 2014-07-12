@@ -4,7 +4,11 @@
 @returns an array in this fashion
 array(
 [0]=>array(
-[url]=>'string of the image',
+[name]=>'string with name of the user'.
+[url]=>array(
+'string of the image',
+'...',
+)
 [up]=>int number of up votes
 ),
 );
@@ -13,6 +17,7 @@ function getImg($myId=-1){
 
 }
 /**
+Maximum of 8 pictures per user. (dont use magic numebr set it in config.php and use $_GLOBAL
 @param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_GET is
 */
 function addImg($myId){
