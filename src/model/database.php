@@ -1,4 +1,6 @@
 <?php
+
+class Database{
 /**
 @param myId id of the user requesting. do NOT return the user's own picture :D
 @returns an array in this fashion
@@ -17,7 +19,7 @@ function getImg($myId=-1){
 
 }
 /**
-Maximum of 8 pictures per user. (dont use magic numebr set it in config.php and use $_GLOBAL
+Maximum of 8 pictures per user. (dont use magic number set it in config.php and use $_GLOBAL
 @param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_GET is
 */
 function addImg($myId){
@@ -47,5 +49,5 @@ function login($email,$pwd){
 function isLoggedIn(){
 
 }
-
+}
 ?>
