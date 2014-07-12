@@ -15,7 +15,7 @@ array(
 ),
 );
 */
-function getImg($myId=-1){
+public static function getImg($myId=-1){
 	$conn=mysqli_connect("localhost","username","pwd","db");
 	$ppl_to_choose_from=mysql_query('SELECT DISTINCT u_id FROM Images');
 	$num_people_to_choose_from=mysql_num_rows($ppl_to_choose_from);
@@ -42,7 +42,7 @@ function getImg($myId=-1){
 Maximum of 8 pictures per user. (dont use magic number set it in config.php and use $_GLOBAL
 @param user adding the image, the image itself is passed from the form. Communicate with Nicole on what the $_GET is
 */
-function addImg($myId){
+public static function addImg($myId){
 	if(isset($_GET['pic'])) {
     	//Only strip slashes if magic quotes is enabled.
     	$pic = (get_magic_quotes_gpc()) ? stripslashes($_GET['pic']) : $_GET['pic'];
@@ -60,7 +60,7 @@ function addImg($myId){
 /**
 @param id the id of the img to drop
 */
-function dropImg($id){
+public static function dropImg($id){
 	$conn=mysqli_connect("localhost","username","pwd","db");
    	mysqli_query($conn, "DELETE FROM Images where id='" + $id +"'");
 	mysql_close($conn);
