@@ -26,8 +26,8 @@
             <div id="signupform">
                 <h1>Sign into InStyle</h1>
                 <p>InStyle makes it quick and easy to get feedback on which image to use for your LinkedIn profile picture.</p>
-                <form action="/" method="POST">
-                    <input type="text" name="lastname" placeholder="email" class="updatedinput"> </br>
+                <form action="/login" method="POST">
+                    <input type="text" name="email" placeholder="email" class="updatedinput"> </br>
                     <input type="password" name="password" placeholder="password" class="updatedinput">
                     </br><button class="submit">SIGN UP</button>
                 </form>

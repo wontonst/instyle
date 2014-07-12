@@ -27,29 +27,22 @@ return true;
     }
 }
 function login($email,$pwd){
-  echo 'hi';
   $connect = init_db();
   $table="users";
-  $select = "SELECT id,password from users where email='$email'";
-  $result = mysqli_query($select, $connect) or die(mysqli_error());
+  $select = "SELECT * from users where email='$email' and password='$pwd'";
+  $result = mysqli_query($connect,$select);
   if(!$result) {
-    die('Connection failed.');
+    $GLOBALS['error']='Connection failed.'.$mysqli_error($connect);
+return false;
   }
   else {
-    if($result->num_rows > 0) {
-      redirect_and_die();
-    }
-    else {
-      $password = mysqli_result($result, 1);
-      if($password === $pwd) {
-        session_start();
-        echo "$HI";
-        $_SESSION['email'] = $email;
-        $_SESSION['id'] = $id;
-      }
+$data=       mysqli_fetch_assoc($result);
+        $_SESSION['email'] = $data['email'];
+        $_SESSION['id'] = $data['id'];
+return true;
     }
   }
-}
+
 function isLoggedIn(){
   if(!isset($_SESSION['email']) || !$_SESSION['email']) {
     return false;

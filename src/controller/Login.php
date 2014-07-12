@@ -12,9 +12,10 @@ if(Account::isLoggedIn()){
 Redirect::to('/profile');
 }
 $ret = Account::login($_POST['email'],$_POST['password']);
-if(!$ret)
+if(!$ret){
 echo 'Invalid username/password combo';
-else
+echo $GLOBALS['error'];
+}else
 Redirect::to('/profile');
 }
 }
