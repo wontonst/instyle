@@ -8,8 +8,8 @@ $name = $_SESSION['name'];
 createView('profile');
 }
 else {
-  header("Location: login");
-  die();
+Redirect::to('/login');
+return;
 }
 
 }
