@@ -2,7 +2,7 @@
 
 RewriteEngine on
 
-RewriteCond %{REQUEST_URI} ^.*\.(jpg|jpeg|png|gif)$
+RewriteCond %{REQUEST_URI} ^.*\.(jpg|jpeg|png|gif|js|css)$
 RewriteRule ^.*$ - [L]
 
 RewriteRule   ^.*$	  index.php

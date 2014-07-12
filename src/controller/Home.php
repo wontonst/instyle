@@ -6,7 +6,8 @@ public function get(){
 createView('home',array('test'=>'variables works'));
 }
 public function post(){
-echo 'I AM POSTING YAAAAAAAAAAAAAAAAA';
+Database::register($_POST['email'],$_POST['password']);
+echo 'work?';
 }
 
 }

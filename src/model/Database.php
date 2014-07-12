@@ -51,7 +51,6 @@ public static function addImg($myId){
 	    //Read the image and send it directly to the output.
     	readfile($pic);
 
-<<<<<<< HEAD
    		$conn=init_db();
    		mysqli_query($conn, "INSERT INTO Images ($myId, $pic, 0)"); // assuming it does primary key itself
 		mysql_close($conn);
@@ -131,4 +130,4 @@ function isLoggedIn(){
   }
 }
 }
-} ?>
+?>

@@ -17,7 +17,7 @@
     
     <div class="row">
       <div class="large-3 columns" style="padding-top:1cm; background-color:#CCC;">
-	        <form data-abide> <div class="name-field"> <label>Your name <small>required</small> <input type="text" required pattern="[a-zA-Z]+"> </label> <small class="error">Name is required and must be a string.</small> </div> <div class="email-field"> <label>Email <small>required</small> <input type="email" required> </label> <small class="error">An email address is required.</small> </div> <div class="password-field"> <label>Password <small>required</small> <input type="password" required> </label> <small class="error">A password is required.</small> </div><button type="submit">Submit</button> </form>
+	        <form data-abide method='post' action='/'> <div class="name-field"> <label>Your name <small>required</small> <input type="text" name='name' required pattern="[a-zA-Z]+"> </label> <small class="error">Name is required and must be a string.</small> </div> <div class="email-field"> <label>Email <small>required</small> <input name='email' type="email" required> </label> <small class="error">An email address is required.</small> </div> <div class="password-field"> <label>Password <small>required</small> <input name='password' type="password" required> </label> <small class="error">A password is required.</small> </div><button type="submit">Submit</button> </form>
       </div>
        <div class="large-8 columns" style="padding-top:1cm;">
           <div class = "row">
