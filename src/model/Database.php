@@ -72,17 +72,23 @@ function rateUp($id){
     mysqli_query($conn, "UPDATE Images SET up='(SELECT up FROM Images where id='".$id."' )+1' WHERE id='"+$id+"'");
   mysqli_close($conn);
 }
+function redirect_and_die() {
+  header("Location: index.php");
+  die();
+}
 
 function register($email,$pwd){
+
   $connect = init_db();
-  $table = "users";
-  $select = "SELECT * from $table where email='$email'";
+  $select = "SELECT * from users where email='$email'";
   $result = mysqli_query($select, $connect) or die(mysqli_error());
-  echo "hi";
   if(!$result) {
     die('mySQL Connection failed on Database.php:'.__LINE__);
   }
   else {
+      redirect_and_die();
+  }
+  if($result->num_rows > 0) {
       redirect_and_die();
   }
   else {
@@ -90,12 +96,12 @@ function register($email,$pwd){
          "(email,password) ".
          "VALUES ('$email', '$password')";
         $retval = mysqli_query( $sql, $connect );
+        echo "YAY";
         if(! $retval )
         {
           die('Could not enter data: ' . mysqli_error($GLOBALS['config']['connetion']));
         }
     }
-  }
 }
 function login($email,$pwd){
   echo 'hi';
