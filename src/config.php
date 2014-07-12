@@ -1,6 +1,6 @@
 <?php
 
-$_GLOBAL['config'] = array(
+$GLOBALS['config'] = array(
 'dbhost'=>'localhost',
 'dbusr'=>'root',
 'dbpwd'=>'password',
