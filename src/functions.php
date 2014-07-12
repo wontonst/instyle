@@ -15,20 +15,22 @@ $$k = $v;
 include(__DIR__.'/view/'.$name.'.php');
 }
 function init_db() {
-  if($GLOBAL['config']['connection'])
+  if(isset($GLOBALS['config']['connection']))
   {
     return $GLOBALS['config']['connection'];
   }
   $dbhost = $GLOBALS['config']["dbhost"];
   $dbuser = $GLOBALS['config']["dbusr"];
   $dbpass = $GLOBALS['config']["dbpwd"];
-  $GLOBAL['connection'] = mysqli_connect($GLOBAL['config']['dbhost'], $GLOBALS['config']['dbuser'], $GLOBALS['config']['dbpass']);
-  if(!$conn)
+  $GLOBALS['config']['connection'] = mysqli_connect($GLOBALS['config']['dbhost'], $GLOBALS['config']['dbusr'], $GLOBALS['config']['dbpwd']);
+  if(!$GLOBALS['config']['connection'])
   {
-    die('Could not connect: ' . mysqli_error());
+    die('Could not connect: ' . mysqli_error($GLOBALS['config']['connection']));
   }
-  mysqli_select_db($GLOBALS['config']['connection'],$GLOBAL['config']['dbname']);
+  mysqli_select_db($GLOBALS['config']['connection'],$GLOBALS['config']['dbname']);
   return $GLOBALS['config']['connection'];
 }
-
+function close_db(){
+unset($GLOBALS['config']['connection']);
+}
 ?>
