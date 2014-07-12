@@ -15,7 +15,7 @@
 	<div class="navbar">
 		<ul>
 			<li><img id="logo" src="../img/instyle-logo.svg"></li>
-			<li>Welcome, Bob!</li>
+			<li>Welcome, <?php echo $name; ?></li>
 
 		</ul>
 	</div>
@@ -24,7 +24,7 @@
 
 	<div class="row titlecard">
 		<div class="large-3 columns">
-        	<img class="leftcard" src="../img/justin3.jpeg">
+        	<img class="leftcard" src="/img/justin3.jpeg">
     	</div>
 
     	<div class="large-9 columns">
@@ -49,13 +49,13 @@
     <div class="row">
     	<div class="large-12 columns" id="help">
     		<ul class="small-block-grid-1 large-block-grid-4">
-			  <li> <img src="../img/justin2.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../images/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin2.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
 
-			  <li> <img src="../img/justin.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../images/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
 
-			  <li> <img src="../img/justin4.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../images/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin4.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
 
-			  <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../images/thumb-icon.svg"> </a> </span> </li>
+			  <li> <img src="../img/justin5.jpeg"> <span class="imglabel">12 Votes  <span class="hr">|</span> <a href=""> <img class="thumbup" src="../img/thumb-icon.svg"> </a> </span> </li>
 
 			</ul>
     	</div>
