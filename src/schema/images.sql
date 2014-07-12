@@ -1,0 +1,2 @@
+drop table images;
+CREATE TABLE `images` ( `id` int(11) NOT NULL AUTO_INCREMENT, `url` varchar(256) DEFAULT NULL, `u_id` int(11) NOT NULL,`ups` int(11) NOT NULL, PRIMARY KEY (`id`) ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ; -- -- Constraints for dumped tables -- -- -- Constraints for table `images` -- ALTER TABLE `images` ADD CONSTRAINT `users_column1` FOREIGN KEY (`id`) REFERENCES `users` (`id`);
