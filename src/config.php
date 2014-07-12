@@ -1,10 +1,10 @@
 <?php
 
-$_GLOBAL['config'] = array(
+$GLOBALS['config'] = array(
 'dbhost'=>'localhost',
 'dbusr'=>'root',
 'dbpwd'=>'root',
-'db'=>'instyle'
+'dbname'=>'instyle',
 );
 
 ?>
