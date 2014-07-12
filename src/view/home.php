@@ -26,7 +26,7 @@
                 <h1>Get help choosing <br> a profile picture</h1>
                 <p>InStyle makes it quick and easy to get feedback on which image to use for your LinkedIn profile picture.</p>
                 <form action="/" method="POST">
-                    <input type="text" name="lastname" placeholder="email" class="updatedinput"> </br>
+                    <input type="text" name="email" placeholder="email" class="updatedinput"> </br>
                     <input type="password" name="password" placeholder="password" class="updatedinput"> </br>
                     <input type="submit" value="SUBMIT" class="button">
                 </form>

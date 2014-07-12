@@ -70,34 +70,30 @@ function rateUp($id){
     mysqli_query($conn, "UPDATE Images SET up='(SELECT up FROM Images where id='".$id."' )+1' WHERE id='"+$id+"'");
   mysqli_close($conn);
 }
-function redirect_and_die() {
-  header("Location: index.php");
-  die();
-}
 
 function register($email,$pwd){
   $connect = init_db();
   $select = "SELECT * from users where email='$email'";
-  $result = mysqli_query($select, $connect) or die(mysqli_error());
+  $result = mysqli_query($connect,$select) or die(mysqli_error($connect));
   if(!$result) {
-    die('mySQL Connection failed on Database.php:'.__LINE__);
-  }
-  else {
-      redirect_and_die();
+    $GLOBALS['error']='mySQL Connection failed on Database.php:'.__LINE__;
+return false;
   }
   if($result->num_rows > 0) {
-      redirect_and_die();
+$GLOBALS['error'] = 'Email already taken';
+return false;
   }
   else {
         $sql = "INSERT INTO users ".
          "(email,password) ".
-         "VALUES ('$email', '$password')";
-        $retval = mysqli_query( $sql, $connect );
-        echo "YAY";
+         "VALUES ('$email', '$pwd')";
+        $retval = mysqli_query($connect, $sql );
         if(! $retval )
         {
-          die('Could not enter data: ' . mysqli_error($GLOBALS['config']['connetion']));
+          $GLOBALS['error']='Could not register user: ' . mysqli_error($GLOBALS['config']['connection']);
+return false;
         }
+return true;
     }
 }
 function login($email,$pwd){
@@ -125,7 +121,7 @@ function login($email,$pwd){
   }
 }
 function isLoggedIn(){
-  if($_SESSION->count() == 0) {
+  if(!isset($_SESSION['email']) || !$_SESSION['email']) {
     return false;
   }
   else {
