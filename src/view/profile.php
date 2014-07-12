@@ -14,11 +14,7 @@
 	<div class="navbar">
 		<ul>
 			<li><img id="logo" src="../images/instyle-logo.svg"></li>
-			<li>blah</li>
-			<li>blah</li>
-			<li>blah</li>
-			<li>blah</li>
-			<li>blah</li>
+			<li>Welcome, Bob!</li>
 
 		</ul>
 	</div>
