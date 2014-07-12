@@ -1,6 +1,6 @@
 <?php
 
-functon createView($name){
+function createView($name){
 include(__DIR__.'/view/'.$name.'.php');
 }
 

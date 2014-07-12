@@ -36,6 +36,11 @@ function register($email,$pwd){
 function login($email,$pwd){
 
 }
+/**
+@returns false if no one is logged in, else return array with user id and list of user images/ups
+*/
+function isLoggedIn(){
 
+}
 
 ?>

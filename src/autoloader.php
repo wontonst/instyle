@@ -1,13 +1,13 @@
 <?php
 
-spl_autload_register(function($cn){
-include(__DIR__.'/view');
+spl_autoload_register(function($cn){
+include(__DIR__.'/view/'.$cn.'.php');
 });
-spl_autload_register(function($cn){
-include(__DIR__.'/controller');
+spl_autoload_register(function($cn){
+include(__DIR__.'/controller/'.$cn.'.php');
 });
-spl_autload_register(function($cn){
-include(__DIR__.'/model');
+spl_autoload_register(function($cn){
+include(__DIR__.'/model/'.$cn.'.php');
 });
 
 ?>
