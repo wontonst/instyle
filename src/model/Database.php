@@ -16,7 +16,7 @@ array(
 */
 public static function getImg($myId=-1){
 	$conn=mysqli_connect("localhost","username","pwd","db");
-	$ppl_to_choose_from=mysql_query('SELECT DISTINCT u_id FROM Images');
+	$ppl_to_choose_from=mysqli_query('SELECT DISTINCT u_id FROM Images');
 	$num_people_to_choose_from=mysql_num_rows($ppl_to_choose_from);
 
   $whom_to_choose=0;

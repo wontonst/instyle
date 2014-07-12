@@ -15,20 +15,20 @@ $$k = $v;
 include(__DIR__.'/view/'.$name.'.php');
 }
 function init_db() {
-  if($_GLOBAL['connection'])
+  if($GLOBAL['config']['connection'])
   {
-    return $_GLOBAL['connection'];
+    return $GLOBALS['config']['connection'];
   }
-  $dbhost = $_GLOBAL["dbhost"];
-  $dbuser = $_GLOBAL["dbusr"];
-  $dbpass = $_GLOBAL["dbpwd"];
-  $_GLOBAL['connection'] = mysql_connect($dbhost, $dbuser, $dbpass);
+  $dbhost = $GLOBALS['config']["dbhost"];
+  $dbuser = $GLOBALS['config']["dbusr"];
+  $dbpass = $GLOBALS['config']["dbpwd"];
+  $GLOBAL['connection'] = mysqli_connect($GLOBAL['config']['dbhost'], $GLOBALS['config']['dbuser'], $GLOBALS['config']['dbpass']);
   if(!$conn)
   {
-    die('Could not connect: ' . mysql_error());
+    die('Could not connect: ' . mysqli_error());
   }
-  mysql_select_db($_GLOBAL["dbtable"]);
-  return $_GLOBAL['connection'];
+  mysqli_select_db($GLOBALS['config']['connection'],$GLOBAL['config']['dbname']);
+  return $GLOBALS['config']['connection'];
 }
 
 ?>
